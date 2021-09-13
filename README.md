@@ -22,15 +22,35 @@
 
 
 
-Name of feature: ____________Asynchronous code, and APIs____________________
+Name of feature: ___________1.  Set up your React repository & API keys.
 
-Estimate of time needed to complete: _____
+Estimate of time needed to complete: __20 min___
 
-Start time: _____
+Start time: __2:30___
 
-Finish time: _____
+Finish time: __2:50___
 
-Actual time needed to complete: _____
+Actual time needed to complete: __10 min___
+
+Name of feature: ___________ 2. Locations: As a user of City Explorer, I want to enter the name of a location so that I can see the exact latitude and longitude of that location
+
+Estimate of time needed to complete: __2 hr___
+
+Start time: __3:30___
+
+Finish time: __5:30___
+
+Actual time needed to complete: __1 hr___
+
+Name of feature: __________3. Map: As a user, I want to see a map of the city so that I can see the layout of the area I want to explore.
+
+Estimate of time needed to complete: __1 hr___
+
+Start time: __5:30___
+
+Finish time: __6:30___
+
+Actual time needed to complete: __30 min___
 
 
 # Getting Started with Create React App
