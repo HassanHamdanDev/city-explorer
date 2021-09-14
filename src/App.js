@@ -59,14 +59,14 @@ class App extends Component {
         })
       })
     }).then(() => {
-      axios.get(`http://${process.env.REACT_APP_BACKEND_URL}/weather?cityQuery=${this.state.cityNameInput}&lat=${this.state.lat}&lon=${this.state.lon}`).then(res => {
+      axios.get(`https://city-explorer-hassan.herokuapp.com/weather?cityQuery=${this.state.cityNameInput}&lat=${this.state.lat}&lon=${this.state.lon}`).then(res => {
         this.setState({
           weatherData: res.data,
         })
         
       })
     }).then(() => {
-      axios.get(`http://${process.env.REACT_APP_BACKEND_URL}/movies?query=${this.state.cityNameInput}`).then(res => {
+      axios.get(`https://city-explorer-hassan.herokuapp.com/movies?query=${this.state.cityNameInput}`).then(res => {
         this.setState({
           moviesData: res.data
         })
