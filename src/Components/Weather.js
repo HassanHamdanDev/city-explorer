@@ -13,7 +13,7 @@ class Weather extends Component {
                         </tr>
                     </thead>
                     <tbody>
-                        {this.props.forcoastArray.map(elem => {
+                        {this.props.weatherData.map(elem => {
                             return <tr>
                                 <td>{elem.date}</td>
                                 <td>{elem.description}</td>

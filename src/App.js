@@ -6,6 +6,7 @@ import NavbarCustom from './Components/NavbarCustom';
 import axios from 'axios';
 import ErorrApp from './Components/ErorrApp';
 import Weather from './Components/Weather';
+import Movies from './Components/Movies';
 
 class App extends Component {
   constructor(props) {
@@ -21,7 +22,7 @@ class App extends Component {
       errorShow: false,
       cityNameInput: '',
       weatherData: [],
-      forcoastArray: []
+      moviesData: []
     }
   }
 
@@ -35,13 +36,10 @@ class App extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-    // if(this.state.cityName)
-
     let config = {
       method: "GET",
       baseURL: `https://api.locationiq.com/v1/autocomplete.php?key=${process.env.REACT_APP_LOCATIONIQ_API_KEY}&q=${this.state.cityName}`
     }
-
     axios(config).then(res => {
       let dataResponse = res.data[0]
       this.setState({
@@ -61,12 +59,17 @@ class App extends Component {
         })
       })
     }).then(() => {
-      axios.get(`http://${process.env.REACT_APP_BACKEND_URL}/weather-data?searchQuery=${this.state.cityNameInput}&lon=${this.state.lon}&lat=${this.state.lat}`).then(res => {
+      axios.get(`http://${process.env.REACT_APP_BACKEND_URL}/weather?cityQuery=${this.state.cityNameInput}&lat=${this.state.lat}&lon=${this.state.lon}`).then(res => {
         this.setState({
           weatherData: res.data,
-          forcoastArray: res.data.forecast
         })
-        console.log(res.data);
+        
+      })
+    }).then(() => {
+      axios.get(`http://${process.env.REACT_APP_BACKEND_URL}/movies?query=${this.state.cityNameInput}`).then(res => {
+        this.setState({
+          moviesData: res.data
+        })
       })
     }).catch(error => {
       this.setState({
@@ -89,15 +92,17 @@ class App extends Component {
         {
           this.state.showCity &&
           <>
-            <Weather
-              weatherData={this.state.weatherData}
-              forcoastArray={this.state.forcoastArray}
-            />
             <CityExplore
               cityName={this.state.cityName}
               cityImage={this.state.cityImage}
               lon={this.state.lon}
               lat={this.state.lat}
+            />
+            <Weather
+              weatherData={this.state.weatherData}
+            />
+            <Movies
+              moviesData={this.state.moviesData}
             />
           </>
         }
