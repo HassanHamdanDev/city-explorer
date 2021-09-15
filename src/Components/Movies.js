@@ -1,37 +1,36 @@
 import React, { Component } from 'react';
-import { Row, Col, Card, Image} from 'react-bootstrap';
+import { Row, Col, Card, Image } from 'react-bootstrap';
 
 
 class Movies extends Component {
     render() {
         return (
-            <div>
+            <>
                 <Row xs={1} md={2} className="g-4">
                     {this.props.moviesData.map(elem => {
-                        return <Col>
+                        return <Col key={elem.id}>
                             <Card>
                                 <Image
                                     variant="top"
-                                    src={elem.poster_path}
+                                    src={elem.image_url}
                                     alt=""
-                                    roundedCircle
                                     fluid
                                     style={{ margin: '0' }}
                                 />
                                 <Card.Body>
-                                    <Card.Title>{elem.title}</Card.Title>
-                                    <Card.Subtitle>{elem.vote_count}</Card.Subtitle>
-                                    <Card.Subtitle>{elem.popularity}</Card.Subtitle>
-                                    <Card.Subtitle>{elem.release_date}</Card.Subtitle>
-                                    <Card.Subtitle>{elem.vote_average}</Card.Subtitle>
-                                    <Card.Text>{elem.overview}</Card.Text>
+                                    <Card.Title> Title : {elem.title}</Card.Title><br />
+                                    <Card.Subtitle> Total Votes : {elem.total_votes}</Card.Subtitle><br />
+                                    <Card.Subtitle> Popularity : {elem.popularity}</Card.Subtitle><br />
+                                    <Card.Subtitle> Released On : {elem.released_on}</Card.Subtitle><br />
+                                    <Card.Subtitle> Average Votes : {elem.average_votes}</Card.Subtitle><br />
+                                    <Card.Text> <strong>Overview :</strong><br />{elem.overview}</Card.Text>
                                 </Card.Body>
                             </Card>
                         </Col>
                     })
                     }
                 </Row>
-            </div>
+            </>
         )
     }
 }

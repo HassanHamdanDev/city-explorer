@@ -61,6 +61,7 @@ class App extends Component {
       axios.get(`https://city-explorer-hassan.herokuapp.com/weather?cityQuery=${this.state.cityNameInput}&lat=${this.state.lat}&lon=${this.state.lon}`).then(res => {
         this.setState({
           weatherData: res.data,
+          
         })
       })
     }).then(() => {
@@ -77,9 +78,10 @@ class App extends Component {
       })
     })
   }
+  
   render() {
     return (
-      <>
+      <>{console.log(this.state.moviesData)}
         <NavbarCustom />
         <Container>
         <h1>Welcome to City Explorer</h1>
