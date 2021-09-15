@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Row, Col, Card, Image, Table } from 'react-bootstrap';
+import { Row, Col, Card, Image} from 'react-bootstrap';
 
 
 class Movies extends Component {
@@ -10,7 +10,7 @@ class Movies extends Component {
                     {this.props.moviesData.map(elem => {
                         return <Col>
                             <Card>
-                                <Card.Img
+                                <Image
                                     variant="top"
                                     src={elem.poster_path}
                                     alt=""
