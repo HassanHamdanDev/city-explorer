@@ -52,6 +52,55 @@ Finish time: __6:30___
 
 Actual time needed to complete: __30 min___
 
+Name of feature: 4. Errors: As a user, I want clear messages if something goes wrong so I know if I need to make any changes or try again in a different manner.
+
+Estimate of time needed to complete: __1 hr___
+
+Start time: __6:30___
+
+Finish time: __7:30___
+
+Actual time needed to complete: __30 min___
+
+Name of feature: . 5 Weather (placeholder): As a user of City Explorer, I want to see weather info for the city I searched, so that I know how to pack for an upcoming trip.
+
+Estimate of time needed to complete: __2 hr___
+
+Start time: __1:30___
+
+Finish time: __3:30___
+
+Actual time needed to complete: __30 min___
+
+Name of feature: 6. Movies: As a user of City Explorer, I want to see info about movies related to the city I searched, so that I can learn more about the destination.
+
+Estimate of time needed to complete: __2 hr___
+
+Start time: __3:30___
+
+Finish time: __5:30___
+
+Actual time needed to complete: __30 min___
+
+Name of feature: 7. Publish: Deploy your server. As a user, I want to access the City Explorer application on the web, so that anyone can explore from anywhere.
+
+Estimate of time needed to complete: __1 hr___
+
+Start time: __5:30___
+
+Finish time: __6:30___
+
+Actual time needed to complete: __30 min___
+
+
+Name of feature: .8. Refactor: Componentize the front-end codebase.
+Estimate of time needed to complete: __1 hr___
+
+Start time: __1:30___
+
+Finish time: __2:30___
+
+Actual time needed to complete: __30 min___
 
 # Getting Started with Create React App
 

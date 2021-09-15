@@ -7,16 +7,18 @@ class Movie extends Component {
         return (
             <>
                 <h3 style={{ borderRadius: '0.25em', textAlign: 'center', color: 'purple', border: '1px solid cyan', padding: '0.5em' }}>{this.props.cityNameInput} Movies</h3>
-                <Row xs={1} md={2} className="g-4">
+                <Row xs={1} md={3} className="g-4" >
                     {this.props.moviesData.map((elem, index) => {
-                        return <Col key={index}>
-                            <Card>
+                        return <Col key={index} >
+                            <Card style={{ alignItems: 'center' }}>
+                                <br />
                                 <Image
                                     variant="top"
                                     src={elem.image_url}
                                     alt=""
+                                    roundedCircle
                                     fluid
-                                    style={{ margin: '0' }}
+                                    style={{ height: 400, width: 400 }}
                                 />
                                 <Card.Body>
                                     <Card.Title> Title : {elem.title}</Card.Title><br />
