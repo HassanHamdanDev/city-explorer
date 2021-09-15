@@ -6,9 +6,10 @@ class Movies extends Component {
     render() {
         return (
             <>
+                <h3 style={{ borderRadius: '0.25em', textAlign: 'center', color: 'purple', border: '1px solid purple', padding: '0.5em' }}>{this.props.cityName} Movies</h3>
                 <Row xs={1} md={2} className="g-4">
-                    {this.props.moviesData.map(elem => {
-                        return <Col key={elem.id}>
+                    {this.props.moviesData.map((elem, index) => {
+                        return <Col key={index}>
                             <Card>
                                 <Image
                                     variant="top"

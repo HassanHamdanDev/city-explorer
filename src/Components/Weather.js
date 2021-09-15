@@ -16,8 +16,8 @@ class Weather extends Component {
                                 </tr>
                             </thead>
                             <tbody>
-                                {this.props.weatherData.map(elem => {
-                                    return <tr key={elem.id}>
+                                {this.props.weatherData.map((elem, index) => {
+                                    return <tr key={index}>
                                         <td>{elem.date}</td>
                                         <td>{elem.description}</td>
                                     </tr>

@@ -61,7 +61,7 @@ class App extends Component {
       axios.get(`https://city-explorer-hassan.herokuapp.com/weather?cityQuery=${this.state.cityNameInput}&lat=${this.state.lat}&lon=${this.state.lon}`).then(res => {
         this.setState({
           weatherData: res.data,
-          
+
         })
       })
     }).then(() => {
@@ -78,43 +78,43 @@ class App extends Component {
       })
     })
   }
-  
+
   render() {
     return (
-      <>{console.log(this.state.moviesData)}
+      <>
         <NavbarCustom />
         <Container>
-        <h1>Welcome to City Explorer</h1>
-        <CityForm
-          handleInput={this.handleInput}
-          handleSubmit={this.handleSubmit}
-        />
-        {
-          this.state.showCity &&
-          <>
-            <CityExplore
-              cityName={this.state.cityName}
-              cityImage={this.state.cityImage}
-              lon={this.state.lon}
-              lat={this.state.lat}
-            />
-            <Weather
-              weatherData={this.state.weatherData}
-              cityName={this.state.cityName}
-            />
-            <Movies
-              moviesData={this.state.moviesData}
-              cityName={this.state.cityName}
-            />
-          </>
-        }
-        {
-          this.state.errorShow &&
-          <ErorrApp
-            errorMassage={this.state.errorMassage}
-            errorStatus={this.state.errorStatus}
+          <h1>Welcome to City Explorer</h1>
+          <CityForm
+            handleInput={this.handleInput}
+            handleSubmit={this.handleSubmit}
           />
-        }
+          {
+            this.state.showCity &&
+            <>
+              <CityExplore
+                cityName={this.state.cityName}
+                cityImage={this.state.cityImage}
+                lon={this.state.lon}
+                lat={this.state.lat}
+              />
+              <Weather
+                weatherData={this.state.weatherData}
+                cityName={this.state.cityName}
+              />
+              <Movies
+                moviesData={this.state.moviesData}
+                cityName={this.state.cityName}
+              />
+            </>
+          }
+          {
+            this.state.errorShow &&
+            <ErorrApp
+              errorMassage={this.state.errorMassage}
+              errorStatus={this.state.errorStatus}
+            />
+          }
         </Container>
       </>
     )
