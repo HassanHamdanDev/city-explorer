@@ -7,10 +7,10 @@ class CityForm extends Component {
             <Form onSubmit={this.props.handleSubmit}>
                 <Row md={4} className="g-1">
                     <Col>
-                        <Form.Control 
-                        type="text" 
-                        placeholder="Enter City Name ..."
-                        onChange={this.props.handleInput} />
+                        <Form.Control
+                            type="text"
+                            placeholder="Enter City Name ..."
+                            onChange={this.props.handleInput} />
                     </Col>
                     <Col>
                         <Button variant="primary" type="submit">
