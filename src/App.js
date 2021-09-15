@@ -7,6 +7,7 @@ import axios from 'axios';
 import ErorrApp from './Components/ErorrApp';
 import Weather from './Components/Weather';
 import Movies from './Components/Movies';
+import { Container } from 'react-bootstrap';
 
 class App extends Component {
   constructor(props) {
@@ -25,7 +26,6 @@ class App extends Component {
       moviesData: []
     }
   }
-
   handleInput = (event) => {
     let cityNameInput = event.target.value;
     this.setState({
@@ -33,7 +33,6 @@ class App extends Component {
       cityNameInput: cityNameInput
     })
   }
-
   handleSubmit = (event) => {
     event.preventDefault();
     let config = {
@@ -63,7 +62,6 @@ class App extends Component {
         this.setState({
           weatherData: res.data,
         })
-        
       })
     }).then(() => {
       axios.get(`https://city-explorer-hassan.herokuapp.com/movies?query=${this.state.cityNameInput}`).then(res => {
@@ -78,12 +76,12 @@ class App extends Component {
         errorShow: true
       })
     })
-
   }
   render() {
     return (
       <>
         <NavbarCustom />
+        <Container>
         <h1>Welcome to City Explorer</h1>
         <CityForm
           handleInput={this.handleInput}
@@ -100,9 +98,11 @@ class App extends Component {
             />
             <Weather
               weatherData={this.state.weatherData}
+              cityName={this.state.cityName}
             />
             <Movies
               moviesData={this.state.moviesData}
+              cityName={this.state.cityName}
             />
           </>
         }
@@ -113,6 +113,7 @@ class App extends Component {
             errorStatus={this.state.errorStatus}
           />
         }
+        </Container>
       </>
     )
   }

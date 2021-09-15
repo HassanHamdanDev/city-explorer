@@ -1,38 +1,36 @@
 import React, { Component } from 'react';
-import { Table } from 'react-bootstrap';
+import { Row, Col, Card, Image, Table } from 'react-bootstrap';
 
 
 class Movies extends Component {
     render() {
         return (
             <div>
-                <Table striped bordered hover variant="info">
-                    <thead>
-                        <tr>
-                            <th>title</th>
-                            <th>overview</th>
-                            <th>vote_average</th>
-                            <th>vote_count</th>
-                            <th>poster_path</th>
-                            <th>popularity</th>
-                            <th>release_date</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {this.props.moviesData.map(elem => {
-                            return <tr>
-                                <td>{elem.title}</td>
-                                <td>{elem.overview}</td>
-                                <td>{elem.vote_average}</td>
-                                <td>{elem.vote_count}</td>
-                                <td>{elem.poster_path}</td>
-                                <td>{elem.popularity}</td>
-                                <td>{elem.release_date}</td>
-                            </tr>
-                        })
-                        }
-                    </tbody>
-                </Table>
+                <Row xs={1} md={2} className="g-4">
+                    {this.props.moviesData.map(elem => {
+                        return <Col>
+                            <Card>
+                                <Card.Img
+                                    variant="top"
+                                    src={elem.poster_path}
+                                    alt=""
+                                    roundedCircle
+                                    fluid
+                                    style={{ margin: '0' }}
+                                />
+                                <Card.Body>
+                                    <Card.Title>{elem.title}</Card.Title>
+                                    <Card.Subtitle>{elem.vote_count}</Card.Subtitle>
+                                    <Card.Subtitle>{elem.popularity}</Card.Subtitle>
+                                    <Card.Subtitle>{elem.release_date}</Card.Subtitle>
+                                    <Card.Subtitle>{elem.vote_average}</Card.Subtitle>
+                                    <Card.Text>{elem.overview}</Card.Text>
+                                </Card.Body>
+                            </Card>
+                        </Col>
+                    })
+                    }
+                </Row>
             </div>
         )
     }

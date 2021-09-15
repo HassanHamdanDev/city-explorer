@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
-import { Table } from 'react-bootstrap';
+import { Col,Table } from 'react-bootstrap';
 
 class Weather extends Component {
     render() {
         return (
             <>
-                <Table striped bordered hover variant="info">
+            <Col >
+                <h3 style={{ borderRadius: '0.25em', textAlign: 'center', color: 'purple', border: '1px solid purple', padding: '0.5em' }}>{this.props.cityName} Weather</h3>
+                <Table striped bordered hover variant="info" roundedCircle fluid>
                     <thead>
                         <tr>
                             <th>Day</th>
@@ -22,6 +24,7 @@ class Weather extends Component {
                         }
                     </tbody>
                 </Table>
+                </Col>
             </>
         )
     }
