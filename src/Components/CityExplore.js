@@ -5,7 +5,7 @@ class CityExplore extends Component {
     render() {
         return (
             <>
-            <Container>
+            <Container >
             <Row>
                 <Col>
                 <Card className="bm-dark text-black" >

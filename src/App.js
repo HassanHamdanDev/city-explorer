@@ -82,32 +82,37 @@ class App extends Component {
   render() {
     return (
       <>
-        <NavbarCustom />
-        <Container>
+        <NavbarCustom  />
+        <Container style={{ borderRadius: '0.25em', textAlign: 'center', border: '3px outset gray', padding: '1em'}}>
           <h1>Welcome to City Explorer</h1>
+          <br/>
           <CityForm
             handleInput={this.handleInput}
             handleSubmit={this.handleSubmit}
           />
+          <br/>
           {
             this.state.showCity &&
             <>
-              <CityExplore
+              <CityExplore 
                 cityName={this.state.cityName}
                 cityImage={this.state.cityImage}
                 lon={this.state.lon}
                 lat={this.state.lat}
               />
+              <br/>
               <Weather
                 weatherData={this.state.weatherData}
-                cityName={this.state.cityName}
+                cityNameInput={this.state.cityNameInput}
               />
+              <br/>
               <Movies
                 moviesData={this.state.moviesData}
-                cityName={this.state.cityName}
+                cityNameInput={this.state.cityNameInput}
               />
             </>
           }
+          <br/>
           {
             this.state.errorShow &&
             <ErorrApp
