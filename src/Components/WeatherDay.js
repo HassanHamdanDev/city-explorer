@@ -1,5 +1,5 @@
-import React, { Component } from 'react'
-import { Col, Card, Row } from 'react-bootstrap'
+import React, { Component } from 'react';
+import { Col, Card, Row } from 'react-bootstrap';
 
 class WeatherDay extends Component {
     render() {
