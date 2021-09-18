@@ -8,6 +8,7 @@ import ErorrApp from './Components/ErorrApp';
 import Weather from './Components/Weather';
 import Movies from './Components/Movies';
 import { Container } from 'react-bootstrap';
+import Restaurants from './Components/Restaurants';
 
 class App extends Component {
   constructor(props) {
@@ -23,7 +24,8 @@ class App extends Component {
       errorShow: false,
       cityNameInput: '',
       weatherData: [],
-      moviesData: []
+      moviesData: [],
+      resturantsData: []
     }
   }
   handleInput = (event) => {
@@ -70,6 +72,12 @@ class App extends Component {
           moviesData: res.data
         })
       })
+    }).then(() => {
+      axios.get(`https://city-explorer-hassan.herokuapp.com/yelp?location=${this.state.cityNameInput}&limit=20`).then(res => {
+        this.setState({
+          resturantsData: res.data
+        })
+      })
     }).catch(error => {
       this.setState({
         errorMassage: error.response.data.error,
@@ -103,6 +111,11 @@ class App extends Component {
               <br />
               <Weather
                 weatherData={this.state.weatherData}
+                cityNameInput={this.state.cityNameInput}
+              />
+              <br />
+              <Restaurants
+                resturantsData={this.state.resturantsData}
                 cityNameInput={this.state.cityNameInput}
               />
               <br />
